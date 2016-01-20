@@ -1,38 +1,23 @@
-import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './colors';
-
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  tick() {
-    this.setState({
-      counter: this.state.counter + this.props.increment
-    });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <h1 style={{ color: this.props.color }}>
-        Counter ({this.props.increment}): {this.state.counter}
-      </h1>
-    );
-  }
-}
+import React from 'react';
+import Component from 'react-pure-render/component';
+import AllocGraph from './portfolioallocation.react';
+import data from './mock.js';
+import '../styles/main.styl';
 
 export class App extends Component {
-  render() {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  onChange = active => this.setState({active});
+
+  render({active} = this.state) {
+    active = active || data.state
     return (
-      <div>
-        <Counter increment={1} color={NICE} />
-        <Counter increment={5} color={SUPER_NICE} />
+      <div className="tr-alloc-graph">
+        <AllocGraph onChange={this.onChange} {...data} state={active}/>
       </div>
     );
   }

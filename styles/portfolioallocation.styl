@@ -1,0 +1,139 @@
+color-title = #256271;
+
+small-viewport = 760px
+mid-viewport = 990px
+header-wide-viewport = 1360px
+wide-viewport = 1550px
+
+.analyst-consensus-1
+  color #9b459a
+
+.analyst-consensus-2
+  color #9b459a
+
+.analyst-consensus-3
+  color #818181
+
+.analyst-consensus-4
+  color #4bb0b8
+
+.analyst-consensus-5
+  color #4bb0b8
+
+
+.portfolio-allocation
+  background none
+  margin-top -3px
+
+  .menu-options
+    position absolute
+    top 8px
+    right 8px
+
+  .content
+    padding 0 !important
+
+    .content-inner
+      margin auto
+      padding-top 0
+      width 600px
+      white-space nowrap
+
+    .center-div
+      padding 72px 54px 0
+      pointer-events none
+      position absolute
+      text-align center
+      width 186px
+      white-space normal
+      
+      .count
+        color #3a809d
+        font-family Proxima Nova
+        font-size 2.0625em /* 33/16 */
+        line-height 29px
+      .list
+        color #41a7b7
+        font-size 0.85em /* 12/16 */
+        line-height 12px
+
+    .graph-connector
+      position absolute
+      transform translate(145px, 2px)
+
+    .graph-wrapper
+      display inline-block
+      vertical-align bottom
+
+      &:not(:last-child)
+        margin-right 15px
+
+      &.total-graph-wrapper
+        .asset-allocation-graph
+          size = 185px
+          height 170px
+          width size
+          margin-bottom -3px
+          
+          path.slice 
+            cursor pointer
+
+      &.deep-graph-wrapper
+
+        .center-div
+          padding 0
+          width 170px
+          transform translate(-8px, 54px)
+          -webkit-transform translate(-8px, 54px)
+          -ms-transform translate(-8px, 54px)
+          
+        .asset-allocation-graph
+          size = 150px
+          height 135px
+          width size
+
+        .graphLeged
+          padding-left 9px
+          
+        .list
+          line-height 16px
+          
+        .deep-asset-percentage
+          font-family Proxima Nova
+          font-size: 22px
+
+    .beforeLegendItem
+      size = 12px
+      border-radius 2px
+      display inline-block
+      height size
+      margin-right 5px
+      vertical-align middle
+      width size
+
+    .graphLeged
+      display inline-block
+      left -10px
+      list-style-type none
+      margin 0
+      padding 0 0 25px
+      position relative
+      vertical-align text-bottom
+
+      li
+        color #8d8d90
+        font-size 11px
+        margin 3px 0
+        padding 0
+        text-transform capitalize
+
+  .link-like-button-wrapper
+    margin 0 11px 0
+    position relative
+    top -18px
+
+  @media screen and (min-width: mid-viewport)
+    flex-basis 50%
+
+  @media screen and (min-width: wide-viewport)
+    flex-basis 39%
